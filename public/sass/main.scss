@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import url("https://use.typekit.net/jri1ggg.css");
+
+
+
+// Variables 
+$dark-blue: #0E2A38; 
+
+
+//Bulma
+$body-background-color: $dark-blue;
+$body-color: $white; 
+$navbar-height: 7rem;
+
+
+//Classes/IDs
+.logo {
+    font-family: 'viktor-script', sans-serif;
+    font-style: normal; 
+    font-size: 5em;
+}
+
+
+
+
+
+
+// Import Bulma Variables
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
