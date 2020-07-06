@@ -2,12 +2,27 @@
 var express = require('express');
 var router = express.Router();
 
-var resume = require('./resume.js');
+
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Home' });
+    res.render('index', { title: 'Angel S.' });
 });
 
-app.listen(3000); 
+
+// Get resume page
+router.get('/resume', function (req, res) {
+    res.render('resume', { title: 'My Resume' });
+});
+
+// Get portfolio page
+router.get('/portfolio', function (req, res) {
+    res.render('portfolio', { title: 'My Portfolio' });
+});
+
+// Get contact page
+router.get('/contact', function (req, res) {
+    res.render('contact', { title: 'Contact Me' });
+});
+
 
 module.exports = router;
