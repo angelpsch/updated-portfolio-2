@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Angel S.' });
+    res.render('index', { title: 'Angel Schultz: Web Developer' });
 });
 
 

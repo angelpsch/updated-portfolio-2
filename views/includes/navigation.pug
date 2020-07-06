@@ -1,5 +1,33 @@
 block navigation
-    nav.navbar
-        div.navbar-brand
-            a.navbar-item.logo(href= '/') Angel Schultz
-        
+    nav.navbar(role= 'navigation', aria-label='main navigation')
+            div.navbar-brand
+                a.logo(href= '/') Angel Schultz
+            div.navbar-menu#navMenu
+                .navbar-start
+                .navbar-end
+                    - var currentUrl = '/';
+                    a.navbar-item(class={active: currentUrl === '/'} href='/') Home  
+                    |
+                    |           
+                    a.navbar-item(class={active: currentUrl === 'resume'} href='resume') My Resume            
+                    a.navbar-item(class={active: currentUrl === 'portfolio'} href='portfolio') My Portfolio            
+                    a.navbar-item(class={active: currentUrl === 'contact'} href='contact') Contact
+                    |
+            div.navbar-menu.is-active.is-hidden-desktop
+                a.navbar-burger(role='button', aria-label='menu', aria-expanded='false', data-target='navMenu')
+                    span(aria-hidden='true')
+                    span(aria-hidden='true')
+                    span(aria-hidden='true')
+
+                script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+                script.
+                    // Check for click events on the navbar burger icon
+                    $(".navbar-burger").click(function() {
+
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        $(".navbar-burger").toggleClass("is-active");
+                        $(".navbar-menu").toggleClass("is-active");
+
+                    });
+                    
+                        

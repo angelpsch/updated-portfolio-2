@@ -1,24 +1,38 @@
 @charset "utf-8";
 @import "../node_modules/bulma/bulma.sass";
+
 @import url("https://use.typekit.net/jri1ggg.css");
 
 
 
 // Variables 
 $dark-blue: #0E2A38; 
-
+$tealish: #2FA08A; 
 
 //Bulma
 $body-background-color: $dark-blue;
-$body-color: $white; 
-$navbar-height: 7rem;
+$body-color: white; 
+$navbar-background-color: $tealish; 
+$navbar-item-hover-background-color: $tealish; 
+$navbar-item-hover-color: $dark-blue; 
+
+
 
 
 //Classes/IDs
+.navbar-menu {
+    padding-right: 0.5em; 
+}
+.navbar-burger {
+    margin: auto; 
+}
 .logo {
     font-family: 'viktor-script', sans-serif;
     font-style: normal; 
     font-size: 5em;
+    color: $dark-blue;
+    margin: auto 0;  
+    padding-left: 0.25em;   
 }
 
 
