@@ -7481,11 +7481,24 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+nav {
+  font-family: 'serenity light', sans-serif;
+  padding-right: 1em; }
+  nav .navbar-item {
+    font-size: 1.5em; }
+  nav .navbar-menu.is-active {
+    margin: 0 auto; }
+  nav a.navbar-burger {
+    color: #0E2A38;
+    margin: 0 auto;
+    width: auto;
+    height: 4.25rem; }
+    nav a.navbar-burger span {
+      width: 5%;
+      padding: 3.5px; }
+
 .navbar-menu {
   padding-right: 0.5em; }
-
-.navbar-burger {
-  margin: auto; }
 
 .logo {
   font-family: 'viktor-script', sans-serif;
@@ -7494,6 +7507,24 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   color: #0E2A38;
   margin: auto 0;
   padding-left: 0.25em; }
+
+.container.is-fluid {
+  margin-top: 2em; }
+
+.title {
+  text-align: center; }
+
+@media (max-width: 1023px) {
+  .logo {
+    margin: auto;
+    margin-top: 0.25em;
+    padding-left: 0;
+    font-size: 500%; }
+  nav .navbar-item {
+    text-align: center;
+    font-size: 250%; }
+  nav .navbar-menu.is-active.navbar-burger span:nth-child(2) {
+    visibility: hidden; } }
 
 @keyframes spinAround {
   from {
@@ -7790,7 +7821,7 @@ pre {
   font-family: monospace; }
 
 body {
-  color: white;
+  color: whitesmoke;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5; }
@@ -8796,8 +8827,9 @@ table th {
     vertical-align: middle; }
 
 .title {
-  color: #363636;
-  font-size: 2rem;
+  color: whitesmoke;
+  font-family: "viktor-script", sans-serif;
+  font-size: 5rem;
   font-weight: 600;
   line-height: 1.125; }
   .title strong {
@@ -10187,7 +10219,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-item,
 .navbar-link {
-  color: #4a4a4a;
+  color: #0E2A38;
   display: block;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
@@ -10206,7 +10238,7 @@ a.navbar-item,
   .navbar-link:hover,
   .navbar-link.is-active {
     background-color: #2FA08A;
-    color: #0E2A38; }
+    color: whitesmoke; }
 
 .navbar-item {
   flex-grow: 0;

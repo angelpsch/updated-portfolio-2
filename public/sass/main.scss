@@ -10,21 +10,43 @@ $dark-blue: #0E2A38;
 $tealish: #2FA08A; 
 
 //Bulma
+
 $body-background-color: $dark-blue;
-$body-color: white; 
+$body-color: $white-ter; 
 $navbar-background-color: $tealish; 
+$title-color: $white-ter; 
+$title-family: 'viktor-script', sans-serif; 
+$navbar-item-color: $dark-blue; 
 $navbar-item-hover-background-color: $tealish; 
-$navbar-item-hover-color: $dark-blue; 
+$navbar-item-hover-color: $white-ter; 
+$family-primary: 'serenity light', sans-serif; 
+$title-size: 5rem; 
 
-
-
-
-//Classes/IDs
+//Elements
+nav {
+    font-family: 'serenity light', sans-serif;
+     padding-right: 1em; 
+    .navbar-item {
+        font-size: 1.5em; 
+    }
+    .navbar-menu.is-active {
+        margin: 0 auto; 
+        
+    }
+    a.navbar-burger {
+        color: $dark-blue;  
+        margin: 0 auto;
+        width: auto;  
+        height: 4.25rem;
+        span {
+            width: 5%;
+            padding: 3.5px;
+          
+             }
+            }
+}
 .navbar-menu {
     padding-right: 0.5em; 
-}
-.navbar-burger {
-    margin: auto; 
 }
 .logo {
     font-family: 'viktor-script', sans-serif;
@@ -35,8 +57,35 @@ $navbar-item-hover-color: $dark-blue;
     padding-left: 0.25em;   
 }
 
+.container.is-fluid {
+    margin-top: 2em; 
+}
+
+.title {
+    text-align: center;
+}
 
 
+//Media queries
+@media (max-width: $desktop - 1) {
+    .logo {
+        margin: auto; 
+        margin-top: 0.25em; 
+        padding-left: 0; 
+        font-size: 500%; 
+    }
+    nav {
+        .navbar-item {
+            text-align: center;
+            font-size: 250%; 
+        }
+       .navbar-menu.is-active.navbar-burger {
+                span:nth-child(2) {
+                    visibility: hidden;
+            }
+        }
+    }
+}
 
 
 
