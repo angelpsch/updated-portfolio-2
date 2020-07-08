@@ -7506,13 +7506,35 @@ nav {
   font-size: 5em;
   color: #0E2A38;
   margin: auto 0;
-  padding-left: 0.25em; }
+  padding-left: 0.25em;
+  text-shadow: 5px 5px 5px #cc5656; }
 
 .container.is-fluid {
   margin-top: 2em; }
 
-.title {
-  text-align: center; }
+.profile {
+  border-radius: 25em;
+  box-shadow: 5px 10px 10px #091b24; }
+
+.logo img {
+  border-radius: 20em;
+  box-shadow: 5px 5px #d26969;
+  padding: 10px; }
+
+.hero {
+  background-color: #091b24; }
+
+.footer {
+  background-color: #D87D7D;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 2em; }
+  .footer p.logo {
+    padding: 0;
+    margin: 0; }
+  .footer p {
+    color: #0E2A38; }
 
 @media (max-width: 1023px) {
   .logo {
@@ -7523,8 +7545,14 @@ nav {
   nav .navbar-item {
     text-align: center;
     font-size: 250%; }
-  nav .navbar-menu.is-active.navbar-burger span:nth-child(2) {
-    visibility: hidden; } }
+  nav a.navbar-burger.is-active .hide-this-span {
+    display: none; }
+  .profile {
+    margin: 0 auto; }
+  .footer .navbar-item {
+    font-size: 200%;
+    text-align: left;
+    display: inline; } }
 
 @keyframes spinAround {
   from {
@@ -8855,7 +8883,7 @@ table th {
     font-size: 0.75rem; }
 
 .subtitle {
-  color: #4a4a4a;
+  color: whitesmoke;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25; }
@@ -9683,7 +9711,7 @@ table th {
     font-size: 1.5rem; }
 
 .navbar {
-  background-color: #2FA08A;
+  background-color: #D87D7D;
   min-height: 3.25rem;
   position: relative;
   z-index: 30; }
@@ -10301,7 +10329,7 @@ a.navbar-item,
   .navbar-link::after {
     display: none; }
   .navbar-menu {
-    background-color: #2FA08A;
+    background-color: #D87D7D;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0; }
     .navbar-menu.is-active {

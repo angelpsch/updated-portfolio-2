@@ -8,12 +8,14 @@
 // Variables 
 $dark-blue: #0E2A38; 
 $tealish: #2FA08A; 
+$lighter-pink: #D87D7D; 
+$lightest-pink: #F4EBE8;
 
 //Bulma
 
 $body-background-color: $dark-blue;
 $body-color: $white-ter; 
-$navbar-background-color: $tealish; 
+$navbar-background-color: $lighter-pink; 
 $title-color: $white-ter; 
 $title-family: 'viktor-script', sans-serif; 
 $navbar-item-color: $dark-blue; 
@@ -21,6 +23,7 @@ $navbar-item-hover-background-color: $tealish;
 $navbar-item-hover-color: $white-ter; 
 $family-primary: 'serenity light', sans-serif; 
 $title-size: 5rem; 
+$subtitle-color: $white-ter; 
 
 //Elements
 nav {
@@ -54,17 +57,47 @@ nav {
     font-size: 5em;
     color: $dark-blue;
     margin: auto 0;  
-    padding-left: 0.25em;   
+    padding-left: 0.25em;  
+    text-shadow: 5px 5px 5px darken($color: $lighter-pink, $amount: 10); 
 }
 
 .container.is-fluid {
     margin-top: 2em; 
 }
 
-.title {
-    text-align: center;
+
+.profile {
+   border-radius: 25em;
+   box-shadow: 5px 10px 10px darken($color: $dark-blue, $amount: 5);
+}
+.logo {
+    img {
+        border-radius: 20em;
+        box-shadow: 5px 5px darken($color: $lighter-pink, $amount: 5);
+        padding: 10px;
+    }
 }
 
+.hero {
+    background-color: darken($color: $dark-blue, $amount: 5);
+}
+
+
+.footer {
+    background-color: $lighter-pink;
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+    padding-bottom: 2em; 
+    p.logo {
+        padding: 0; 
+        margin: 0; 
+    }
+    p {
+        color: $dark-blue;
+    }
+   
+}
 
 //Media queries
 @media (max-width: $desktop - 1) {
@@ -73,16 +106,27 @@ nav {
         margin-top: 0.25em; 
         padding-left: 0; 
         font-size: 500%; 
+       
     }
     nav {
         .navbar-item {
             text-align: center;
             font-size: 250%; 
         }
-       .navbar-menu.is-active.navbar-burger {
-                span:nth-child(2) {
-                    visibility: hidden;
+       a.navbar-burger.is-active {
+                .hide-this-span {
+                    display: none; 
             }
+        }
+    }
+    .profile {
+        margin: 0 auto; 
+    }
+    .footer {
+        .navbar-item {
+            font-size: 200%; 
+            text-align: left;
+            display: inline;
         }
     }
 }
