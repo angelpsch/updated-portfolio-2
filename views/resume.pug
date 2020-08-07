@@ -1,3 +1,61 @@
 extends layout.pug
 
 block content
+    
+    - var tabs = ['Summary', 'Education', 'Experience', 'Skills' ];
+    mixin links(title= tabs)
+        each val in title 
+            a(id='resumeTabs', href='#'+val.toLowerCase())&attributes(attributes)= val
+    h1.title.has-text-centered Resume
+
+    .tabs.is-centered.is-medium
+        ul.is-hidden-touch
+                li
+                +links().has-text-white
+                    
+    .dropdown.is-hidden-desktop
+        .dropdown-trigger
+            button.button(aria-haspopup="true", aria-controls='dropdown-menu2') 
+                div
+                span.icon.is-small
+                    i.fas.fa-angle-down(aria-hidden="true")
+        .dropdown-menu#dropdown-menu2(role='menu')
+            .dropdown-content
+               +links().dropdown-item
+                    
+
+
+
+
+    include includes/resume-content.pug
+
+    script.
+        $(document).ready(function(){
+            
+            $('button div').text('Summary');
+
+
+            $('.dropdown').click(function(){
+                $(".dropdown").toggleClass('is-active'); 
+            })
+
+            $("a#resumeTabs").click(function(e) {
+                e.preventDefault(); 
+                var showMe = $(this).attr('href'); 
+                $('.box').addClass('is-hidden'); 
+                $(showMe).removeClass('is-hidden'); 
+                $('a#resumeTabs').removeClass('active-tab'); 
+                $(this).addClass('active-tab'); 
+                $('button div').text($(this).text()); 
+
+            });
+            
+        })
+                    
+
+
+
+                    
+                
+
+

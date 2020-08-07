@@ -1,14 +1,21 @@
+
+
 block footer
-    footer.footer 
-        .content.has-text-centered
-            p.logo Angel Schultz
-            p.subtitle 2020 © Angel Schultz 
-            a(href='tel:3198304230') Call Me or Text Me
-            br
-            a(href='mailto:angel.p.schultz@gmail.com') E-mail Me
-            nav.navbar(role='navigation', aria-label='footer navigation')
-                    a.navbar-item(href='/') Home            
-                    a.navbar-item(href='resume') My Resume            
-                    a.navbar-item(href='portfolio') My Portfolio            
-                    a.navbar-item(href='contact') Contact
-                    |
+    footer.footer
+        .container
+            .content.has-text-centered
+                a.logo(href='/') Angel Schultz
+                p.subtitle.copr 2020 © Angel Schultz 
+                p
+                    a(href='tel:3198304230').contact Call or Text Me
+                p
+                    a(href='mailto:angel.p.schultz@gmail.com').contact E-mail Me
+                nav.navbar(role='navigation', aria-label='footer navigation')
+                        a.navbar-item(href='/') Home            
+                        a.navbar-item(href='resume') My Resume            
+                        a.navbar-item(href='portfolio') My Portfolio            
+                        a.navbar-item(href='contact') Contact
+            .content
+                a(href="https://bulma.io")
+                    img(src="https://bulma.io/images/made-with-bulma--dark.png" alt="Made with Bulma" width="128" height="24") 
+                a(href="https://icons8.com/").has-text-black Icons by Icons8

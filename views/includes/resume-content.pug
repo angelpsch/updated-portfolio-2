@@ -1,0 +1,83 @@
+- var nospace = ['py-0', 'my-0']
+- var text = ['is-uppercase','subtitle','has-text-centered']
+#summary.box.has-text-centered
+    p Hello, my name is Angel!
+#education.box.has-text-centered.is-hidden
+    mixin education(name, degree, graduated)
+        .content
+            h2(class=nospace)= degree
+            h3.is-italic(class=nospace)= name
+            p.has-text-weight-light(class=nospace)= graduated
+        
+    +education('University of Kansas', 'Certificate in Full Stack Web Development', 'August 2020')
+    +education('Johnson County Community College', 'Associates in General Studies', 'December 2019')
+    +education('Valley Lutheran High School', 'High School Diploma', 'May 2014')
+#experience.box.is-hidden
+    mixin experience(title, business, start, end, description)
+        .content.has-text-centered    
+            h2(class=nospace)= title
+            h4.is-italic(class=nospace)= business
+            p.has-text-weight-semibold(class=nospace)= start + ' to ' + end 
+            p.has-text-weight-light(class=nospace)= description
+    +experience('Office Assistant', 'Garrison Law Office', 'December 2017', 'August 2019', 'Carried out administrative tasks such as updating ledgers, electronic case filing, and processing payments.')
+    +experience('Assistant to Field Operations', 'Titan Protection & Consulting', 'January 2017', 'December 2017', 'Assisted Director in Fields Operations in tasks such as tracking all employee licensing and training.')
+    +experience('Social Media Specialist', 'The Merit Group, LLC', 'March 2016', 'March 2017', 'Planned, scheduled and executed social media campaigns for new or growing companies.')
+    +experience('Territory Manager', 'MUDD Advertising', 'November 2015', 'March 2016', 'Eighty cold calls per day to car dealerships to promote marketing campaigns.')
+    
+                
+
+#skills.box.is-hidden  
+    p.has-text-centered.has-text-weight-light(style='margin-bottom:1em; ') *Complete list on request
+   
+    mixin icons(icon, name)
+        span.tag(style='padding: 3em; margin: 3em; ')
+            span.icon
+                i(class='fas fa-3x fab fa-'+icon, title=name)
+    mixin words(name, title)
+        span.tag(style='padding: 3em; margin: 3em;')
+            span.icon
+                p.has-text-weight-bold.subtitle(title= title)&attributes(attributes)= name
+    mixin titles(title)
+        h1(class=text class=nospace)=title
+        hr
+    .columns.is-centered
+        .column.is-2
+            +titles('Languages')
+            +icons('html5', 'HTML5')
+            +icons('css3-alt', 'CSS')
+            +icons('js', 'JavaScript')
+            +icons('python', 'Python')
+            +icons('markdown', 'Markdown')
+        .column.is-2
+            +titles('Frameworks/Libraries')
+            +icons('node-js', 'Node.js')
+            +icons('sass', 'Sass')
+            +icons('react', 'React')
+            +words('B', 'Bootstrap').is-uppercase(style='font-size: 3em; font-family: sans-serif;')
+            +words('Bulma', 'Bulma').is-uppercase
+            +words('pug', 'pug')(style="font-family: 'arvo', serif; font-weight:700;")
+            +words('yarn', 'Yarn')(style="font-family:'charcuterie-cursive', sans-serif; font-size: 2em")
+            +words('jQuery', 'jQuery')(style="font-family: 'dunbar-text', sans-serif; font-weight: 800; font-style:italic; font-size: 1.5em;")
+            
+        .column.is-2
+            +titles('Tools')
+            +icons('wordpress', 'WordPress')
+            +icons('slack', 'Slack')
+            +icons('github', 'Git/GitHub/Bash')
+          
+                
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+     
+
+    
+        

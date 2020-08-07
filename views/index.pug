@@ -1,14 +1,18 @@
 extends layout.pug
 
 block content
- - var fluid = ['container', 'is-fluid']
-        div(class=fluid)
-          section.hero  
-            .hero-body
-              .container
-                h1.title Welcome to my page.
-                h2.subtitle My name is Angel and I am a full stack web developer.
+    section.hero.animate__fadeInDown  
+    .hero-body
+        .container
+        h1.title Welcome to my page.
+        h2.subtitle My name is Angel and I am a full stack web developer.
+        .buttons
+            a.btn.button(href='/resume') Go to my resume
+            a.btn.button(href='/portfolio') Go to my portfolio
+            a.btn.button(href='/contact') Contact me
+
+    
 
 
-
-  
+ 
+    

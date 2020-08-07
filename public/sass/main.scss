@@ -1,135 +1,278 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 @import "../node_modules/bulma/bulma.sass";
 
-@import url("https://use.typekit.net/jri1ggg.css");
 
 
 
 // Variables 
-$dark-blue: #0E2A38; 
-$tealish: #2FA08A; 
-$lighter-pink: #D87D7D; 
-$lightest-pink: #F4EBE8;
+$darkest: #0c2422; 
+$darker: #0d6979;
+$light: #0d8a80;
+$lightest: #0b927c; 
+$pink: darken($color: #c2097b, $amount: 15); 
+$viktor-script: 'viktor-script', sans-serif;
+$korolev-rounded: 'korolev-rounded', sans-serif; 
+ 
+
 
 //Bulma
-
-$body-background-color: $dark-blue;
+$body-background-color: $darkest;
 $body-color: $white-ter; 
-$navbar-background-color: $lighter-pink; 
+$navbar-background-color: $light; 
 $title-color: $white-ter; 
-$title-family: 'viktor-script', sans-serif; 
-$navbar-item-color: $dark-blue; 
-$navbar-item-hover-background-color: $tealish; 
-$navbar-item-hover-color: $white-ter; 
-$family-primary: 'serenity light', sans-serif; 
+$title-family: $viktor-script; 
+$navbar-item-color: $darkest; 
+$navbar-item-hover-background-color: transparent; 
+$navbar-item-hover-color: $pink; 
+$family-primary: $korolev-rounded; 
+$subtitle-family: $korolev-rounded; 
 $title-size: 5rem; 
 $subtitle-color: $white-ter; 
+$dropdown-menu-min-width: 20rem; 
+$button-border-color: $darker; 
+$navbar-item-active-color: $pink; 
+$tabs-link-active-color: $pink; 
 
+
+// Mixins
+@mixin nav-items {
+    font-family: $korolev-rounded;
+    font-style: normal;
+    font-weight: 500;
+    // :hover {
+    //     text-shadow: 0px 0px 55px $pink, 10px 15px 90px $pink, 0px -10px 60px $pink;
+    // }
+}
+
+@mixin logo {
+    font-family: $viktor-script;
+    font-style: normal; 
+    font-size: 6em;
+    color: $navbar-background-color;
+    text-align: center;
+    text-shadow: 0px 0px 55px $pink, 10px 15px 90px $pink, 0px -10px 60px $pink; 
+    width: 500px;
+    margin: auto;
+    padding-top: 1em; 
+
+}
 //Elements
-nav {
-    font-family: 'serenity light', sans-serif;
-     padding-right: 1em; 
-    .navbar-item {
-        font-size: 1.5em; 
+.wrapper {
+    min-height: 100%;
+    position: relative;
+    margin-bottom: 1em; 
+    .container.is-fluid {
+        background-color: $darkest;
+        padding-bottom: 2em; 
+        padding-top: 1.5em; 
+        display: inline-block; 
+}
+}
+nav.navbar {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    a.logo {
+        @include logo; 
     }
-    .navbar-menu.is-active {
-        margin: 0 auto; 
+    
+   
+    .navbar-menu {
+        width: 500px; 
+        margin: auto; 
+        padding: 0; 
+        text-align: center;
+        .navbar-item {
+            @include nav-items; 
+            padding: 0; 
+            padding-bottom: 0; 
+            margin: auto; 
+            margin-bottom: 1em; 
+            font-size: 1.25em;
+        
+        }
+    }
+    
+
+ 
+   
+}
+.navbar-menu.is-active {
+    margin: 0 auto;
+    .navbar-burger.is-active {
+        span.hide-this-span {
+            display: none; 
+                        }
+         
+    }
+}
+
+a.navbar-burger {
+    color: $darkest;
+    margin: auto;
+    width: auto;
+    height: 4.25rem;
+    
+    span {
+        width: 5%;
+        padding: 3px;
+    }
+}
+
+
+
+footer.footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 100vh; 
+    display: inline-block;
+    width: 100%; 
+    background-color: $navbar-background-color;
+    padding-bottom: 0; 
+    .container {
+        display: flex;
+        width: 100%; 
+       .content {
+        margin: auto; 
+
+           .logo {
+            @include logo; 
+    }
+        .contact, .copr {
+        color: $darkest;
+    }
+       }
         
     }
-    a.navbar-burger {
-        color: $dark-blue;  
+    .navbar {
+        .navbar-item {
+            @include nav-items; 
+        }
+    }
+ 
+   
+}
+
+.buttons {
+    margin-bottom: 3em; 
+    
+}
+
+a.btn {
+    margin-right: 1em;
+   
+    color: $darkest;
+    background: $light;
+    padding: 1em;
+    border-radius: 2em;
+    font-family: $korolev-rounded; 
+    font-size: 1.5rem;
+
+    :hover {
+        background: lighten($light, 15);
+        box-shadow: 5px 5px 8px darken($color: $darkest, $amount: 10);
+    }
+}
+
+.dropdown.is-hidden-desktop{
+    margin: 0 auto; 
+    width: 100%; 
+    .dropdown-trigger {
+        margin: 0 auto; 
+        width: 100%; 
+        button {
         margin: 0 auto;
-        width: auto;  
-        height: 4.25rem;
-        span {
-            width: 5%;
-            padding: 3.5px;
-          
-             }
-            }
-}
-.navbar-menu {
-    padding-right: 0.5em; 
-}
-.logo {
-    font-family: 'viktor-script', sans-serif;
-    font-style: normal; 
-    font-size: 5em;
-    color: $dark-blue;
-    margin: auto 0;  
-    padding-left: 0.25em;  
-    text-shadow: 5px 5px 5px darken($color: $lighter-pink, $amount: 10); 
-}
-
-.container.is-fluid {
-    margin-top: 2em; 
-}
-
-
-.profile {
-   border-radius: 25em;
-   box-shadow: 5px 10px 10px darken($color: $dark-blue, $amount: 5);
-}
-.logo {
-    img {
-        border-radius: 20em;
-        box-shadow: 5px 5px darken($color: $lighter-pink, $amount: 5);
-        padding: 10px;
+        width: 100%;
+        font-size: 250%;
     }
-}
-
-.hero {
-    background-color: darken($color: $dark-blue, $amount: 5);
-}
-
-
-.footer {
-    background-color: $lighter-pink;
-    position: absolute;
-    bottom: 0; 
-    width: 100%;
-    padding-bottom: 2em; 
-    p.logo {
-        padding: 0; 
-        margin: 0; 
+    
+        
     }
-    p {
-        color: $dark-blue;
+    .dropdown-menu#dropdown-menu2 {
+        .dropdown-content a {
+            font-size: 200%; 
+        }
     }
    
 }
 
+.tabs.is-centered.is-medium {
+   margin-bottom: 0;
+   ul {
+       border: none; 
+       
+           
+       
+   } 
+}
+
+span.tag{
+    color: $pink;
+    .subtitle {
+        color: $pink;
+    }
+}
+
+.columns{
+    .column h1, p{
+        color: $pink; 
+    }
+}
 //Media queries
-@media (max-width: $desktop - 1) {
+
+@media (max-width: 1023px) {
     .logo {
         margin: auto; 
-        margin-top: 0.25em; 
+        margin-top: 0.3em; 
         padding-left: 0; 
-        font-size: 500%; 
+        font-size: 700%; 
        
     }
-    nav {
-        .navbar-item {
-            text-align: center;
-            font-size: 250%; 
+    nav.navbar {
+        .navbar-burger {
+            margin-top: 0; 
         }
-       a.navbar-burger.is-active {
-                .hide-this-span {
-                    display: none; 
+        .navbar-menu {
+            box-shadow: none;
+            .navbar-item {
+                font-size: 200%;
             }
         }
+       
     }
-    .profile {
+    .box {
         margin: 0 auto; 
+        font-size: 2em;
     }
+    
     .footer {
         .navbar-item {
-            font-size: 200%; 
+            font-size: 300%; 
             text-align: left;
             display: inline;
         }
+        .copr {
+            font-size: 250%;
+        }
+        .contact {
+            font-size: 200%; 
+        }
+        span.tag {
+            padding: 4em; 
+            p.is-uppercase.has-text-black.subtitle {
+                font-size: 300%; 
+            }
+        }
+        
     }
+    // .buttons {
+    //     display: block;
+    // }
 }
+
+
 
 
 

@@ -3,19 +3,21 @@ html
   head
     title= title
     link(rel='stylesheet', href="css/main.css") 
+    link(rel='stylesheet', href='https://use.typekit.net/jri1ggg.css')
     link(rel='icon', type='image/png', sizes='32x32', href='imgs/favicon-img.png')
+    script(type="text/javascript", src="https://code.jquery.com/jquery-3.5.1.min.js")
+    script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
+    script(src="https://cdn.jsdelivr.net/npm/simple-icons@3.4.0/index.min.js")
     include includes/navigation.pug
-    include includes/footer.pug
   body
-    block navigation
+   
+    block navigation 
+    .wrapper
+      .container.is-fluid
+        block content
+    include includes/footer.pug
     
-          block content
     
-    block footer
-    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
-                script.
-
-                        // Toggle the "is-active" class
-                        $(".pageloader").toggleClass("is-active");
+  
               
                     
