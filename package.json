@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "bulma-accordion": "^2.0.1",
-    "grunt": "^1.2.1"
+    "grunt": "^1.5.2"
   }
 }
